@@ -1,0 +1,9 @@
+The CSS rule `:focus-visible` is not supported in older browsers.  This can lead to unexpected behavior, particularly for accessibility features like keyboard navigation.  A focused element might not visually indicate its focus state in these browsers.  For example:
+
+```css
+a:focus-visible {
+  outline: 2px solid blue;
+}
+```
+
+This would only show the outline in browsers supporting `:focus-visible`. In older browsers, the `:focus` pseudo-class would apply the outline to all elements when focused, regardless of whether the user is using a mouse or keyboard.
