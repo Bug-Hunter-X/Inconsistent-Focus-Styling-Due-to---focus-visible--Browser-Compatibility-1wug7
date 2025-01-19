@@ -1,0 +1,24 @@
+One solution is to use JavaScript to detect focus and apply styles accordingly. This provides consistent behavior across all browsers:
+
+```javascript
+const focusableElements = document.querySelectorAll('a, button, input, textarea');
+
+focusableElements.forEach(element => {
+  element.addEventListener('focus', () => {
+    element.classList.add('focused');
+  });
+  element.addEventListener('blur', () => {
+    element.classList.remove('focused');
+  });
+});
+```
+
+Then, style the `.focused` class:
+
+```css
+.focused {
+  outline: 2px solid blue;
+}
+```
+
+This ensures that focused elements always receive the visual cue, regardless of browser support for `:focus-visible`.
